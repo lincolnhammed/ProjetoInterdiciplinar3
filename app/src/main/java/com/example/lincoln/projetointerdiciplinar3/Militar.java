@@ -13,10 +13,16 @@ public class Militar implements Comparable<Militar>{
 
     public Militar()
     {
-        super();
+
     }
 
+    public Militar( String pNome_Militar)
+    {
+        super();
 
+        Nome_Militar = pNome_Militar;
+
+    }
 
     public Militar(long pId_Militar, String pNome_Militar, int pNumero_indentificacao, Graduacao pGraduacao, Subunidade pSubunidade)
     {

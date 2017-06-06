@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text=""
             android:ems="10"
             android:id="@+id/tLogin" />
 
@@ -53,5 +53,17 @@
             android:layout_gravity="center"
             android:textColor="#ffffff"
             android:id="@+id/btLogin" />
+
+        <Button
+            android:id="@+id/inserirButton"
+            android:onClick="inserir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar" />
     </LinearLayout>
+
 </RelativeLayout>
+
+
+
+
