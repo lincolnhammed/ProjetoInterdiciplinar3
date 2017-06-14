@@ -38,13 +38,34 @@ public class Util {
     public static Militar JSONToTempo(String jsonFile){
         JSONObject mainObj;
         Militar militar = null;
+        Graduacao graduacao = null;
+        Subunidade subunidade = null;
+
         try {
             mainObj = new JSONObject(jsonFile);
+            JSONObject nomeObj = mainObj.getJSONObject("objeto");
+            String nome_militar = nomeObj.getString("nome_Militar");
+            int numero_indentificacao = nomeObj.getInt("numero_indentificacao");
 
-            String nome_militar = mainObj.getString("nome_Militar");
+
+            JSONObject nomeObj1 = nomeObj.getJSONObject("graduacao");
+            String patente = nomeObj1.getString("patente");
+            long id = nomeObj1.getLong("id_Graduacao");
+
+            JSONObject nomeObj2 = nomeObj.getJSONObject("subunidade");
+            String subunidade1 = nomeObj2.getString("subunidade");
 
             militar = new Militar();
+            graduacao =new Graduacao();
+            subunidade = new Subunidade();
+            graduacao.setPatente(patente);
+            subunidade.setSubunidade(subunidade1);
+
             militar.setNome_Militar(nome_militar);
+            militar.setNumero_indentificacao(numero_indentificacao);
+            militar.setGraduacao(graduacao);
+            militar.setSubunidade(subunidade);
+
 
         } catch (JSONException e) {
             e.printStackTrace();
